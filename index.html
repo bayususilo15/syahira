@@ -2,18 +2,18 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Surprise Buat Kamuuu</title>
+  <title>Surprise Buat Kamu</title>
   <style>
     body {
-      background: linear-gradient(pink, red);
+      background: linear-gradient(to bottom, pink, red);
       font-family: 'Comic Sans MS', cursive;
-      color: white;
       text-align: center;
-      padding: 50px;
+      padding: 20px;
+      color: white;
     }
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
+      margin-top: 50px;
+      font-size: 32px;
     }
     img {
       width: 150px;
@@ -21,25 +21,22 @@
       border-radius: 20px;
       box-shadow: 0 0 10px white;
     }
-    button {
+    .btn {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      cursor: pointer;
       background-color: white;
       color: red;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1.2em;
-      border-radius: 12px;
-      cursor: pointer;
-      margin: 10px;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
-    #choiceArea {
-      margin-top: 30px;
+    .btn:hover {
+      background-color: pink;
     }
-    #noBtn {
+    #tidak {
       position: absolute;
-    }
-    iframe {
-      display: none;
     }
   </style>
 </head>
@@ -47,39 +44,35 @@
 
   <h1>kamuhh sayanggg ga sama akuuu ?</h1>
 
+  <!-- Gambar lucu -->
+  <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="cute">
+  <img src="https://media.giphy.com/media/3orieYFz8F7lbrE5Ne/giphy.gif" alt="cute2">
+
+  <!-- Lagu My Chemical Romance -->
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/Sfmzkj5QSto?autoplay=1" frameborder="0" allow="autoplay"></iframe>
+
+  <!-- Tombol interaktif -->
   <div>
-    <img src="https://i.pinimg.com/originals/25/66/36/2566363b7e1133e2e9f7ef47ae1f32e6.gif" alt="love1">
-    <img src="https://media.tenor.com/DBqKQK5NCeIAAAAC/bear-love.gif" alt="love2">
-    <img src="https://media.tenor.com/gOtS0j0QGgAAAAAC/cute-love.gif" alt="love3">
+    <button class="btn" onclick="showQuestion()">Klik aku dulu dong</button>
   </div>
 
-  <button onclick="playMusic()">Klik aku dulu dong</button>
-
-  <div id="choiceArea">
+  <div id="question" style="display:none; margin-top: 20px;">
     <h2>kamu sayang aku gaa?</h2>
-    <button onclick="answerYes()">Iyaaa</button>
-    <button id="noBtn" onmouseover="moveNoButton()">Tidak</button>
+    <button class="btn" onclick="alert('Aku jugaaa sayang kamuuu!')">Iyaaa</button>
+    <button class="btn" id="tidak" onmouseover="pindah()">Tidak</button>
   </div>
-
-  <iframe id="ytplayer" width="0" height="0" src="" allow="autoplay" allowfullscreen></iframe>
 
   <script>
-    function playMusic() {
-      const iframe = document.getElementById("ytplayer");
-      iframe.src = "https://www.youtube.com/embed/Sfmzkj5QSto?autoplay=1";
-      alert("Heheh, love youu!!");
+    function showQuestion() {
+      document.getElementById('question').style.display = 'block';
     }
 
-    function answerYes() {
-      alert("Aku jugaaa sayang kamu bangett!!!");
-    }
-
-    function moveNoButton() {
-      const noBtn = document.getElementById("noBtn");
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 100);
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
+    function pindah() {
+      var btn = document.getElementById('tidak');
+      var x = Math.random() * (window.innerWidth - 100);
+      var y = Math.random() * (window.innerHeight - 100);
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
     }
   </script>
 
