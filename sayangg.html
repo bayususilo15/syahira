@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Surprise Buat Kamuuu</title>
+  <style>
+    body {
+      background: linear-gradient(pink, red);
+      font-family: 'Comic Sans MS', cursive;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 150px;
+      margin: 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px white;
+    }
+    button {
+      background-color: white;
+      color: red;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border-radius: 12px;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+    #choiceArea {
+      margin-top: 30px;
+    }
+    #noBtn {
+      position: absolute;
+    }
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>kamuhh sayanggg ga sama akuuu ?</h1>
+
+  <div>
+    <img src="https://i.pinimg.com/originals/25/66/36/2566363b7e1133e2e9f7ef47ae1f32e6.gif" alt="love1">
+    <img src="https://media.tenor.com/DBqKQK5NCeIAAAAC/bear-love.gif" alt="love2">
+    <img src="https://media.tenor.com/gOtS0j0QGgAAAAAC/cute-love.gif" alt="love3">
+  </div>
+
+  <button onclick="playMusic()">Klik aku dulu dong</button>
+
+  <div id="choiceArea">
+    <h2>kamu sayang aku gaa?</h2>
+    <button onclick="answerYes()">Iyaaa</button>
+    <button id="noBtn" onmouseover="moveNoButton()">Tidak</button>
+  </div>
+
+  <iframe id="ytplayer" width="0" height="0" src="" allow="autoplay" allowfullscreen></iframe>
+
+  <script>
+    function playMusic() {
+      const iframe = document.getElementById("ytplayer");
+      iframe.src = "https://www.youtube.com/embed/Sfmzkj5QSto?autoplay=1";
+      alert("Heheh, love youu!!");
+    }
+
+    function answerYes() {
+      alert("Aku jugaaa sayang kamu bangett!!!");
+    }
+
+    function moveNoButton() {
+      const noBtn = document.getElementById("noBtn");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    }
+  </script>
+
+</body>
+</html>
